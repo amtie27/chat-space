@@ -1,0 +1,29 @@
+.chat
+  .main-header
+    .left-header
+      .left-header__title
+        ああああ
+      .left-header__members
+        ああああ
+        .member
+          ああああ
+    .right-header
+      .right-header__button
+        Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+        .upper-message__date
+      .lower-message
+        .lower-message__content
+  .form
+    .form__message
+    .form__mask
+      .form__mask__image
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          -#%input{type: "file"}
+        .hidden
+    .form__submit
+      Send
