@@ -8,7 +8,7 @@ $(function(){
              ${message.user_name}
            </div>
            <div class="upper-message__date">
-             ${message.created_at}
+             ${message.date}
            </div>
          </div>
          <div class="lower-message">
@@ -27,7 +27,7 @@ $(function(){
              ${message.user_name}
            </div>
            <div class="upper-message__date">
-             ${message.created_at}
+             ${message.date}
            </div>
          </div>
          <div class="lower-message">
@@ -53,6 +53,8 @@ $('#new_message').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
+    $('.messages').append(html);      
+    $('form')[0].reset();
   })
 })
 });
