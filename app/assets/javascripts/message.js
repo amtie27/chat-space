@@ -77,6 +77,7 @@ $('#new_message').on('submit', function(e){
    })
    var reloadMessages = function() {
        //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+       if (document.location.href.match(/\/groups\/\d+\/messages/)) {
        last_message_id = $('.message:last').data("message-id");
        $.ajax({
          //ルーティングで設定した通りのURLを指定
@@ -101,10 +102,8 @@ $('#new_message').on('submit', function(e){
            $("#new_message")[0].reset();
            $(".form__submit").prop("disabled", false);
          }
-       })
-       .fail(function() {
-         console.log('error');
        });
      };
-   setInterval(reloadMessages, 7000);
-});
+   };
+      setInterval(reloadMessages, 7000);
+　});
